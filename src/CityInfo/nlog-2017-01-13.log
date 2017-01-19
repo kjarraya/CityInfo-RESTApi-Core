@@ -1,0 +1,666 @@
+2017-01-13 11:13:32.4822|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-13 11:13:32.4822|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-13 11:13:32.5751|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 108.2764ms 200 
+2017-01-13 11:13:32.7478|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 298.6627ms 404 text/plain
+2017-01-13 11:18:34.5366|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest application/json 
+2017-01-13 11:18:34.6813|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1) - ModelState is Valid
+2017-01-13 11:18:34.8232|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (49ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:18:34.8829|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (4ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE [p].[CityId] = @__cityId_0
+2017-01-13 11:18:34.9403|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 11:18:35.0897|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 495.7707ms
+2017-01-13 11:18:35.0998|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 585.2779ms 200 application/json; charset=utf-8
+2017-01-13 11:18:43.0012|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 
+2017-01-13 11:18:43.0122|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1, 1) - ModelState is Valid
+2017-01-13 11:18:43.0282|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:18:43.0533|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 11:18:43.0533|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 11:18:43.0749|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 64.5691ms
+2017-01-13 11:18:43.0844|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 82.5034ms 200 application/json; charset=utf-8
+2017-01-13 11:19:05.6063|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/5/PointsOfInterest application/json 
+2017-01-13 11:19:05.6183|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (5) - ModelState is Valid
+2017-01-13 11:19:05.6322|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:19:14.2028|INFO|CityInfo.Controllers.PointsOfInterestController|city with id 5 wasn't found when accessing points of interest.
+2017-01-13 11:19:14.2158|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-01-13 11:19:14.2268|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 8608.1691ms
+2017-01-13 11:19:14.2268|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 8629.7301ms 404 text/plain
+2017-01-13 11:29:25.4311|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest application/json 
+2017-01-13 11:29:25.4419|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1) - ModelState is Valid
+2017-01-13 11:29:25.5224|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (5ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:29:25.5375|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (3ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE [p].[CityId] = @__cityId_0
+2017-01-13 11:29:25.5490|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 11:29:25.5490|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 117.2226ms
+2017-01-13 11:29:25.5710|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 140.6051ms 200 application/json; charset=utf-8
+2017-01-13 11:29:41.8966|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/4/PointsOfInterest application/json 
+2017-01-13 11:29:41.9106|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (4) - ModelState is Valid
+2017-01-13 11:29:41.9257|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:29:43.0002|INFO|CityInfo.Controllers.PointsOfInterestController|city with id 4 wasn't found when accessing points of interest.
+2017-01-13 11:29:43.0002|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-01-13 11:29:43.0277|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 1116.4143ms
+2017-01-13 11:29:43.0417|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1144.5547ms 404 text/plain
+2017-01-13 11:29:51.7631|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest1 application/json 
+2017-01-13 11:29:51.7746|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 10.4249ms 404 text/plain
+2017-01-13 11:29:58.0549|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 
+2017-01-13 11:29:58.0660|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1, 1) - ModelState is Valid
+2017-01-13 11:29:58.0800|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:29:58.0800|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 11:29:58.1041|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 11:29:58.1131|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 47.0036ms
+2017-01-13 11:29:58.1131|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 67.63ms 200 application/json; charset=utf-8
+2017-01-13 11:30:05.9601|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest/7 application/json 
+2017-01-13 11:30:05.9716|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1, 7) - ModelState is Valid
+2017-01-13 11:30:05.9716|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:30:05.9942|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 11:30:06.0057|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-01-13 11:30:06.0162|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 44.2891ms
+2017-01-13 11:30:06.0162|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 65.7439ms 404 text/plain
+2017-01-13 11:30:14.2100|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest/7 application/json 
+2017-01-13 11:30:14.2205|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1, 7) - ModelState is Valid
+2017-01-13 11:30:14.2694|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (38ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:30:14.3312|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (40ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 11:30:14.3488|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-01-13 11:30:14.3608|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 140.7694ms
+2017-01-13 11:30:14.3608|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 163.9072ms 404 text/plain
+2017-01-13 11:38:31.9250|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-13 11:38:31.9250|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-13 11:38:32.0203|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 131.0788ms 200 
+2017-01-13 11:38:32.2019|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 328.2376ms 404 text/plain
+2017-01-13 11:40:14.1095|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest application/json 
+2017-01-13 11:40:14.2596|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1) - ModelState is Valid
+2017-01-13 11:40:14.4238|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (50ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:40:14.4709|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (3ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE [p].[CityId] = @__cityId_0
+2017-01-13 11:40:14.5296|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 11:40:14.6704|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 499.6341ms
+2017-01-13 11:40:14.6704|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 579.2286ms 200 application/json; charset=utf-8
+2017-01-13 11:40:18.8372|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1 application/json 
+2017-01-13 11:40:18.8533|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) with arguments (1, False) - ModelState is Valid
+2017-01-13 11:40:18.8768|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+2017-01-13 11:40:18.9089|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 11:40:18.9205|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) in 70.9089ms
+2017-01-13 11:40:18.9205|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 95.3873ms 200 application/json; charset=utf-8
+2017-01-13 11:40:24.2137|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest application/json 
+2017-01-13 11:40:24.2258|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1) - ModelState is Valid
+2017-01-13 11:40:24.2438|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:40:24.2568|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (0ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE [p].[CityId] = @__cityId_0
+2017-01-13 11:40:24.2689|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 11:40:24.2839|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 58.7878ms
+2017-01-13 11:40:24.2959|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 82.3141ms 200 application/json; charset=utf-8
+2017-01-13 11:40:30.5988|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest/2 application/json 
+2017-01-13 11:40:30.6108|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1, 2) - ModelState is Valid
+2017-01-13 11:40:30.6224|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:40:30.6410|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 11:40:30.6410|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 11:40:30.6621|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 51.8349ms
+2017-01-13 11:40:30.6731|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 74.8635ms 200 application/json; charset=utf-8
+2017-01-13 11:42:21.0741|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1?includePointsOfIntersest=true application/json 
+2017-01-13 11:42:21.0887|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) with arguments (1, True) - ModelState is Valid
+2017-01-13 11:42:21.1773|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (29ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+ORDER BY [c].[Id]
+2017-01-13 11:42:21.2393|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [c].[Id]
+    FROM [cities] AS [c]
+    WHERE [c].[Id] = @__id_0
+    ORDER BY [c].[Id]
+) AS [c0] ON [p].[CityId] = [c0].[Id]
+ORDER BY [c0].[Id]
+2017-01-13 11:42:21.3895|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) in 304.3394ms
+2017-01-13 11:42:21.5149|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request
+2017-01-13 11:42:21.6127|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 563.5101ms 500 text/html; charset=utf-8
+2017-01-13 11:43:30.6730|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-13 11:43:30.6730|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-13 11:43:30.7740|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 133.7954ms 200 
+2017-01-13 11:43:30.9695|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 347.6489ms 404 text/plain
+2017-01-13 11:43:35.9756|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1?includePointsOfIntersest=true application/json 
+2017-01-13 11:43:36.1382|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) with arguments (1, True) - ModelState is Valid
+2017-01-13 11:43:36.3311|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (28ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+ORDER BY [c].[Id]
+2017-01-13 11:43:36.4197|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (3ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [c].[Id]
+    FROM [cities] AS [c]
+    WHERE [c].[Id] = @__id_0
+    ORDER BY [c].[Id]
+) AS [c0] ON [p].[CityId] = [c0].[Id]
+ORDER BY [c0].[Id]
+2017-01-13 11:43:36.5146|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 11:43:36.6801|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) in 640.7767ms
+2017-01-13 11:43:36.6961|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 720.6687ms 200 application/json; charset=utf-8
+2017-01-13 11:45:38.7510|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-13 11:45:38.7510|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1 application/json 
+2017-01-13 11:45:38.7510|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-13 11:45:38.8513|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 155.2208ms 200 
+2017-01-13 11:45:39.0537|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 374.8115ms 404 text/plain
+2017-01-13 11:45:39.2038|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) with arguments (1, False) - ModelState is Valid
+2017-01-13 11:45:39.3503|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (31ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+2017-01-13 11:45:39.4468|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 11:45:39.6014|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) in 497.5241ms
+2017-01-13 11:45:39.6149|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 936.0676ms 200 application/json; charset=utf-8
+2017-01-13 11:45:45.0108|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest application/json 
+2017-01-13 11:45:45.0253|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1) - ModelState is Valid
+2017-01-13 11:45:45.0419|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:45:45.0620|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE [p].[CityId] = @__cityId_0
+2017-01-13 11:45:45.0860|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 11:45:45.1094|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 86.6684ms
+2017-01-13 11:45:45.1204|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 109.4413ms 200 application/json; charset=utf-8
+2017-01-13 11:45:49.4394|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 
+2017-01-13 11:45:49.4524|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1, 1) - ModelState is Valid
+2017-01-13 11:45:49.4694|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 11:45:49.4874|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 11:45:49.5030|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 11:45:49.5030|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 62.2157ms
+2017-01-13 11:45:49.5266|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 87.4075ms 200 application/json; charset=utf-8
+2017-01-13 12:05:39.3791|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-13 12:05:39.3791|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-13 12:05:39.4792|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 133.86ms 200 
+2017-01-13 12:05:39.6607|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 332.284ms 404 text/plain
+2017-01-13 12:05:48.5627|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 
+2017-01-13 12:05:48.7186|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1, 1) - ModelState is Valid
+2017-01-13 12:05:48.8302|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (25ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 12:05:48.8774|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (4ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 12:05:48.9686|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 12:05:49.1151|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 487.7321ms
+2017-01-13 12:05:49.1293|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 565.9727ms 200 application/json; charset=utf-8
+2017-01-13 12:06:44.9658|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:20134/api/cities/3/PointsOfInterest/ application/json 65
+2017-01-13 12:06:45.0455|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.CreatePointsOfInterest (CityInfo) with arguments (3, CityInfo.Models.PointOfIntersectForCreationDto) - ModelState is Valid
+2017-01-13 12:06:55.7591|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (27ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 12:06:55.7721|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-01-13 12:06:55.7721|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.CreatePointsOfInterest (CityInfo) in 10801.9179ms
+2017-01-13 12:06:55.7937|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 10827.6765ms 404 text/plain
+2017-01-13 12:08:03.4867|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:20134/api/cities/3/PointsOfInterest application/json 65
+2017-01-13 12:08:03.4993|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.CreatePointsOfInterest (CityInfo) with arguments (3, CityInfo.Models.PointOfIntersectForCreationDto) - ModelState is Valid
+2017-01-13 12:08:08.0579|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (27ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 12:08:12.2063|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-01-13 12:08:12.2188|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.CreatePointsOfInterest (CityInfo) in 8719.6622ms
+2017-01-13 12:08:12.2299|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 8742.744ms 404 text/plain
+2017-01-13 12:08:21.6265|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:20134/api/cities/2/PointsOfInterest application/json 65
+2017-01-13 12:08:21.6389|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.CreatePointsOfInterest (CityInfo) with arguments (2, CityInfo.Models.PointOfIntersectForCreationDto) - ModelState is Valid
+2017-01-13 12:08:22.2729|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 12:08:22.2944|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+2017-01-13 12:08:22.4483|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (12ms) [Parameters=[@p0='?', @p1='?' (Size = 200), @p2='?' (Size = 60)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PointsOfIntersect] ([CityId], [Description], [Name])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [PointsOfIntersect]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2017-01-13 12:08:22.4819|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 12:08:22.5105|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.CreatePointsOfInterest (CityInfo) in 870.7973ms
+2017-01-13 12:08:22.5246|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 901.4354ms 201 application/json; charset=utf-8
+2017-01-13 12:08:29.9872|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:20134/api/cities/ application/json 65
+2017-01-13 12:08:30.0032|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 15.4257ms 404 text/plain
+2017-01-13 12:08:34.2346|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/ application/json 
+2017-01-13 12:08:34.2486|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCities (CityInfo) with arguments ((null)) - ModelState is Valid
+2017-01-13 12:08:34.3035|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+ORDER BY [c].[Name]
+2017-01-13 12:08:34.3269|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 12:08:34.3495|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCities (CityInfo) in 101.1519ms
+2017-01-13 12:08:34.3495|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 126.3393ms 200 application/json; charset=utf-8
+2017-01-13 12:08:51.6035|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/2/PointsOfInterest application/json 
+2017-01-13 12:08:51.6165|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (2) - ModelState is Valid
+2017-01-13 12:08:51.6315|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 12:08:51.6491|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE [p].[CityId] = @__cityId_0
+2017-01-13 12:08:51.6653|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 12:08:51.6773|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 60.9761ms
+2017-01-13 12:08:51.6773|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 86.036ms 200 application/json; charset=utf-8
+2017-01-13 12:09:14.3298|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:20134/api/cities/2/PointsOfInterest application/json 66
+2017-01-13 12:09:14.3464|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.CreatePointsOfInterest (CityInfo) with arguments (2, CityInfo.Models.PointOfIntersectForCreationDto) - ModelState is Valid
+2017-01-13 12:09:15.6575|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 12:09:15.6847|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+2017-01-13 12:09:15.7197|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?' (Size = 200), @p2='?' (Size = 60)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PointsOfIntersect] ([CityId], [Description], [Name])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [PointsOfIntersect]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2017-01-13 12:09:15.7467|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 12:09:15.7628|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.CreatePointsOfInterest (CityInfo) in 1417.9734ms
+2017-01-13 12:09:15.7768|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1446.6822ms 201 application/json; charset=utf-8
+2017-01-13 14:55:55.2815|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:20134/api/cities/2/PointsOfInterest application/json 66
+2017-01-13 14:55:55.3015|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.CreatePointsOfInterest (CityInfo) with arguments (2, CityInfo.Models.PointOfIntersectForCreationDto) - ModelState is Valid
+2017-01-13 14:55:56.8649|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (5ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 14:55:56.8795|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+2017-01-13 14:55:56.8995|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (4ms) [Parameters=[@p0='?', @p1='?' (Size = 200), @p2='?' (Size = 60)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PointsOfIntersect] ([CityId], [Description], [Name])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [PointsOfIntersect]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2017-01-13 14:55:56.9135|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 14:55:56.9255|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.CreatePointsOfInterest (CityInfo) in 1627.3516ms
+2017-01-13 14:55:56.9390|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1657.656ms 201 application/json; charset=utf-8
+2017-01-13 15:02:06.9877|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-13 15:02:06.9877|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-13 15:02:07.0873|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 132.2965ms 200 
+2017-01-13 15:02:07.2652|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 328.242ms 404 text/plain
+2017-01-13 15:02:55.9886|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:20134/api/cities/2/PointsOfInterest application/json 73
+2017-01-13 15:02:56.0317|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 42.1537ms 404 text/plain
+2017-01-13 15:03:12.9517|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1 application/json 
+2017-01-13 15:03:13.0781|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) with arguments (1, False) - ModelState is Valid
+2017-01-13 15:03:13.2599|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (46ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+2017-01-13 15:03:13.3490|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 15:03:13.4783|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) in 488.6217ms
+2017-01-13 15:03:13.4921|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 539.3505ms 200 application/json; charset=utf-8
+2017-01-13 15:03:32.5513|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:20134/api/cities/1/PointsOfInterest application/json 73
+2017-01-13 15:03:32.5513|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 12.3633ms 404 text/plain
+2017-01-13 15:03:37.3583|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 73
+2017-01-13 15:03:37.4255|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.UpdatePointsOfInterest (CityInfo) with arguments (1, 1, CityInfo.Models.PointOfIntersectForCreationDto) - ModelState is Valid
+2017-01-13 15:03:37.4646|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (24ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 15:03:37.4775|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-01-13 15:03:37.4775|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.UpdatePointsOfInterest (CityInfo) in 113.1348ms
+2017-01-13 15:03:37.4966|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 138.349ms 404 text/plain
+2017-01-13 15:04:35.4891|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 73
+2017-01-13 15:04:35.5066|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.UpdatePointsOfInterest (CityInfo) with arguments (1, 1, CityInfo.Models.PointOfIntersectForCreationDto) - ModelState is Valid
+2017-01-13 15:04:55.1282|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (30ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 15:05:01.8852|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (3ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 15:05:01.9752|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (5ms) [Parameters=[@p2='?', @p0='?' (Size = 200), @p1='?' (Size = 60)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [PointsOfIntersect] SET [Description] = @p0, [Name] = @p1
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+2017-01-13 15:05:01.9953|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2017-01-13 15:05:02.0075|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.UpdatePointsOfInterest (CityInfo) in 26506.4449ms
+2017-01-13 15:05:02.0075|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 26529.4753ms 204 
+2017-01-13 15:05:12.2833|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 
+2017-01-13 15:05:12.2988|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1, 1) - ModelState is Valid
+2017-01-13 15:05:12.3168|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 15:05:12.3313|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 15:05:12.3469|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 15:05:12.3603|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 61.4796ms
+2017-01-13 15:05:12.3724|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 88.3704ms 200 application/json; charset=utf-8
+2017-01-13 15:37:09.2354|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-13 15:37:09.2354|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-13 15:37:09.3442|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 145.9262ms 200 
+2017-01-13 15:37:09.5320|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 352.0202ms 404 text/plain
+2017-01-13 15:37:23.7047|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PATCH http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 78
+2017-01-13 15:37:24.0808|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.PartiallyUpdatePointsOfInterest (CityInfo) with arguments (1, 1, ) - ModelState is Invalid
+2017-01-13 15:37:33.5959|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 400
+2017-01-13 15:37:33.6260|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.PartiallyUpdatePointsOfInterest (CityInfo) in 9847.9736ms
+2017-01-13 15:37:33.6510|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 9946.2605ms 400 text/plain
+2017-01-13 15:37:39.5720|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PATCH http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 78
+2017-01-13 15:37:39.6266|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.PartiallyUpdatePointsOfInterest (CityInfo) with arguments (1, 1, ) - ModelState is Invalid
+2017-01-13 15:37:45.7436|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 400
+2017-01-13 15:37:45.7561|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.PartiallyUpdatePointsOfInterest (CityInfo) in 6164.4569ms
+2017-01-13 15:37:45.7687|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 6196.2748ms 400 text/plain
+2017-01-13 15:39:18.8302|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PATCH http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 65
+2017-01-13 15:39:18.8750|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.PartiallyUpdatePointsOfInterest (CityInfo) with arguments (1, 1, ) - ModelState is Invalid
+2017-01-13 15:39:20.1667|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 400
+2017-01-13 15:39:20.1786|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.PartiallyUpdatePointsOfInterest (CityInfo) in 1335.917ms
+2017-01-13 15:39:20.1907|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1359.8571ms 400 text/plain
+2017-01-13 15:39:23.5980|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PATCH http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 65
+2017-01-13 15:39:23.6371|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.PartiallyUpdatePointsOfInterest (CityInfo) with arguments (1, 1, ) - ModelState is Invalid
+2017-01-13 15:39:36.5057|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 400
+2017-01-13 15:39:36.5200|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.PartiallyUpdatePointsOfInterest (CityInfo) in 12912.4218ms
+2017-01-13 15:39:36.5411|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 12940.0186ms 400 text/plain
+2017-01-13 15:39:59.7476|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PATCH http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 70
+2017-01-13 15:39:59.8269|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.PartiallyUpdatePointsOfInterest (CityInfo) with arguments (1, 1, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[CityInfo.Models.PointOfIntersectForUpdateDto]) - ModelState is Valid
+2017-01-13 15:40:00.7053|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (48ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 15:40:00.7495|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 15:40:00.9049|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (3ms) [Parameters=[@p1='?', @p0='?' (Size = 60)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [PointsOfIntersect] SET [Name] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2017-01-13 15:40:00.9264|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2017-01-13 15:40:00.9370|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.PartiallyUpdatePointsOfInterest (CityInfo) in 1178.2064ms
+2017-01-13 15:40:00.9370|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1200.2934ms 204 
+2017-01-13 15:40:07.2137|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 
+2017-01-13 15:40:07.2258|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1, 1) - ModelState is Valid
+2017-01-13 15:40:07.2438|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (0ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 15:40:07.2579|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 15:40:07.2860|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 15:40:07.3190|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 93.007ms
+2017-01-13 15:40:07.3301|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 116.9398ms 200 application/json; charset=utf-8
+2017-01-13 15:48:42.2584|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 
+2017-01-13 15:48:42.2734|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1, 1) - ModelState is Valid
+2017-01-13 15:48:42.3573|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (5ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 15:48:42.3739|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (3ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 15:48:42.3885|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 15:48:42.4004|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 126.9249ms
+2017-01-13 15:48:42.4004|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 156.2646ms 200 application/json; charset=utf-8
+2017-01-13 15:49:03.6639|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 
+2017-01-13 15:49:03.6777|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1, 1) - ModelState is Valid
+2017-01-13 15:49:03.6932|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (0ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 15:49:03.7066|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 15:49:03.7189|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 15:49:03.7305|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 52.5702ms
+2017-01-13 15:49:03.7305|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 78.4527ms 200 application/json; charset=utf-8
+2017-01-13 16:58:39.3784|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-13 16:58:39.3784|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-13 16:58:39.4781|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 112.3841ms 200 
+2017-01-13 16:58:39.6541|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 303.9992ms 404 text/plain
+2017-01-13 17:03:58.3238|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 70
+2017-01-13 17:03:58.4858|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.DeletePointsOfInterest (CityInfo) with arguments (1, 1) - ModelState is Valid
+2017-01-13 17:03:58.6694|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (63ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 17:03:58.7126|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 17:03:58.8386|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (3ms) [Parameters=[@p0='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [PointsOfIntersect]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2017-01-13 17:03:58.8731|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2017-01-13 17:03:58.8927|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.DeletePointsOfInterest (CityInfo) in 498.1475ms
+2017-01-13 17:03:58.9107|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 586.3265ms 204 
+2017-01-13 17:04:03.3899|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 
+2017-01-13 17:04:03.4076|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1, 1) - ModelState is Valid
+2017-01-13 17:04:03.4265|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (0ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 17:04:03.4417|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?', @__pointOfIntersectId_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE ([p].[CityId] = @__cityId_0) AND ([p].[Id] = @__pointOfIntersectId_1)
+2017-01-13 17:04:03.4537|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-01-13 17:04:03.4658|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 59.2419ms
+2017-01-13 17:04:03.4794|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 90.5478ms 404 text/plain
+2017-01-13 17:04:06.1905|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest application/json 
+2017-01-13 17:04:06.2045|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) with arguments (1) - ModelState is Valid
+2017-01-13 17:04:06.2226|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (0ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [cities] AS [c]
+        WHERE [c].[Id] = @__cityId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-01-13 17:04:06.2426|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__cityId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+WHERE [p].[CityId] = @__cityId_0
+2017-01-13 17:04:06.3000|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-13 17:04:06.4419|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.GetPointsOfInterest (CityInfo) in 237.6161ms
+2017-01-13 17:04:06.4545|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 263.9414ms 200 application/json; charset=utf-8
+2017-01-13 17:06:28.2816|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1/PointsOfInterest1 application/json 
+2017-01-13 17:06:28.2970|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 17.4757ms 404 text/plain

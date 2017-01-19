@@ -1,0 +1,274 @@
+2017-01-12 11:06:32.9251|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-12 11:06:32.9251|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-12 11:06:33.0469|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 141.5847ms 200 
+2017-01-12 11:06:33.2660|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 372.7652ms 404 text/plain
+2017-01-12 11:06:39.0567|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:20134/api/cities/1/PointsOfInterest/1 application/json 188
+2017-01-12 11:06:39.2828|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.PointsOfInterestController.DeletePointsOfInterest (CityInfo) with arguments (1, 1) - ModelState is Valid
+2017-01-12 11:06:40.5347|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2017-01-12 11:06:40.5468|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.PointsOfInterestController.DeletePointsOfInterest (CityInfo) in 1406.5163ms
+2017-01-12 11:06:40.5578|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1501.6657ms 204 
+2017-01-12 11:53:44.5189|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-12 11:53:44.5189|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-12 11:53:44.6201|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 138.1532ms 200 
+2017-01-12 11:53:44.8221|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 354.7789ms 404 text/plain
+2017-01-12 11:54:35.8624|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:20134/api/testdatabase application/json 188
+2017-01-12 11:54:35.8960|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 33.1981ms 404 text/plain
+2017-01-12 11:54:42.3384|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/testdatabase application/json 
+2017-01-12 11:54:53.8174|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (348ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [CityInfoDB];
+2017-01-12 11:54:53.9321|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (102ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [CityInfoDB] SET READ_COMMITTED_SNAPSHOT ON;');
+2017-01-12 11:54:54.0361|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [cities] (
+    [Id] int NOT NULL IDENTITY,
+    [Description] nvarchar(100),
+    [Name] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_cities] PRIMARY KEY ([Id])
+);
+2017-01-12 11:54:54.0506|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [PointsOfIntersect] (
+    [Id] int NOT NULL IDENTITY,
+    [CityId] int NOT NULL,
+    [Name] nvarchar(60) NOT NULL,
+    CONSTRAINT [PK_PointsOfIntersect] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_PointsOfIntersect_cities_CityId] FOREIGN KEY ([CityId]) REFERENCES [cities] ([Id]) ON DELETE CASCADE
+);
+2017-01-12 11:54:54.0616|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_PointsOfIntersect_CityId] ON [PointsOfIntersect] ([CityId]);
+2017-01-12 11:54:54.0961|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.DummyController.TestDatabase (CityInfo) with arguments ((null)) - ModelState is Valid
+2017-01-12 11:54:54.1132|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2017-01-12 11:54:54.1301|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.DummyController.TestDatabase (CityInfo) in 11757.8375ms
+2017-01-12 11:54:54.1436|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 11804.2646ms 200 
+2017-01-12 12:21:05.3238|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-12 12:21:05.3238|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-12 12:21:05.4372|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 148.1314ms 200 
+2017-01-12 12:21:05.6364|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 363.2225ms 404 text/plain
+2017-01-12 12:21:10.1029|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/testdatabase application/json 
+2017-01-12 12:21:21.4063|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (250ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [CityInfoDB];
+2017-01-12 12:21:21.4664|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (48ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [CityInfoDB] SET READ_COMMITTED_SNAPSHOT ON;');
+2017-01-12 12:21:21.5644|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2017-01-12 12:21:21.6063|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-01-12 12:21:21.6244|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-01-12 12:21:21.6529|INFO|Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator|Applying migration '20170112111555_CityInfoDBItitailMigration'.
+2017-01-12 12:21:21.7009|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [cities] (
+    [Id] int NOT NULL IDENTITY,
+    [Description] nvarchar(100),
+    [Name] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_cities] PRIMARY KEY ([Id])
+);
+2017-01-12 12:21:21.7009|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [PointsOfIntersect] (
+    [Id] int NOT NULL IDENTITY,
+    [CityId] int NOT NULL,
+    [Name] nvarchar(60) NOT NULL,
+    CONSTRAINT [PK_PointsOfIntersect] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_PointsOfIntersect_cities_CityId] FOREIGN KEY ([CityId]) REFERENCES [cities] ([Id]) ON DELETE CASCADE
+);
+2017-01-12 12:21:21.7273|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_PointsOfIntersect_CityId] ON [PointsOfIntersect] ([CityId]);
+2017-01-12 12:21:21.7439|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20170112111555_CityInfoDBItitailMigration', N'1.1.0-rtm-22752');
+2017-01-12 12:21:21.7825|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.DummyController.TestDatabase (CityInfo) with arguments ((null)) - ModelState is Valid
+2017-01-12 12:21:21.8076|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2017-01-12 12:21:21.8266|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.DummyController.TestDatabase (CityInfo) in 11663.1021ms
+2017-01-12 12:21:21.8424|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 11739.347ms 200 
+2017-01-12 12:25:26.4782|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-12 12:25:26.4782|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-12 12:25:26.4782|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/testdatabase application/json 
+2017-01-12 12:25:26.5911|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 168.2057ms 200 
+2017-01-12 12:25:26.8095|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 404.0048ms 404 text/plain
+2017-01-12 12:25:27.5364|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-01-12 12:25:27.5514|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-01-12 12:25:27.5804|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-01-12 12:25:27.6083|INFO|Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator|Applying migration '20170112112421_CityInfoDBPointInterestDescitionMigration'.
+2017-01-12 12:25:27.6670|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [PointsOfIntersect] ADD [Description] nvarchar(200);
+2017-01-12 12:25:27.6843|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20170112112421_CityInfoDBPointInterestDescitionMigration', N'1.1.0-rtm-22752');
+2017-01-12 12:25:27.7214|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.DummyController.TestDatabase (CityInfo) with arguments ((null)) - ModelState is Valid
+2017-01-12 12:25:27.7405|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2017-01-12 12:25:27.7590|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.DummyController.TestDatabase (CityInfo) in 902.6801ms
+2017-01-12 12:25:27.7799|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1374.2282ms 200 
+2017-01-12 12:25:38.1201|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/testdatabase application/json 
+2017-01-12 12:25:38.1462|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-01-12 12:25:38.1462|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-01-12 12:25:38.1737|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-01-12 12:25:38.1873|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.DummyController.TestDatabase (CityInfo) with arguments ((null)) - ModelState is Valid
+2017-01-12 12:25:38.1988|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2017-01-12 12:25:38.2103|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.DummyController.TestDatabase (CityInfo) in 77.1739ms
+2017-01-12 12:25:38.2103|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 102.1865ms 200 
+2017-01-12 12:25:56.1044|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/testdatabase application/json 
+2017-01-12 12:25:56.1441|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-01-12 12:25:56.1602|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-01-12 12:25:56.1747|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-01-12 12:25:56.1878|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.DummyController.TestDatabase (CityInfo) with arguments ((null)) - ModelState is Valid
+2017-01-12 12:25:56.1998|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2017-01-12 12:25:56.2118|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.DummyController.TestDatabase (CityInfo) in 93.3998ms
+2017-01-12 12:25:56.2241|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 118.9685ms 200 
+2017-01-12 13:00:38.6221|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-12 13:00:38.6221|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-12 13:00:38.7429|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 133.6563ms 200 
+2017-01-12 13:00:38.9411|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 347.4163ms 404 text/plain
+2017-01-12 13:01:52.2045|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-12 13:01:52.2045|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-12 13:01:52.3180|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 147.1232ms 200 
+2017-01-12 13:01:52.5256|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 370.2441ms 404 text/plain
+2017-01-12 15:41:39.0805|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-12 15:41:39.0805|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-12 15:41:39.1828|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 136.429ms 200 
+2017-01-12 15:41:39.3598|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 332.2322ms 404 text/plain
+2017-01-12 17:06:21.8872|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-12 17:06:21.8872|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-12 17:06:21.9952|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 139.3324ms 200 
+2017-01-12 17:06:22.1901|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 354.1424ms 404 text/plain
+2017-01-12 17:06:26.9198|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities application/json 
+2017-01-12 17:06:27.0181|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCities (CityInfo) with arguments ((null)) - ModelState is Valid
+2017-01-12 17:06:27.1050|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+ORDER BY [c].[Name]
+2017-01-12 17:06:27.1656|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-12 17:06:27.3135|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCities (CityInfo) in 329.9972ms
+2017-01-12 17:06:27.3243|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 404.5887ms 200 application/json; charset=utf-8
+2017-01-12 17:56:46.4758|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-12 17:56:46.4758|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-12 17:56:46.5705|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 111.0997ms 200 
+2017-01-12 17:56:46.7620|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 319.3177ms 404 text/plain
+2017-01-12 17:56:51.2692|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities application/json 
+2017-01-12 17:56:51.3731|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCities (CityInfo) with arguments ((null)) - ModelState is Valid
+2017-01-12 17:56:51.4665|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+ORDER BY [c].[Name]
+2017-01-12 17:56:51.5329|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-12 17:56:51.7384|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCities (CityInfo) in 401.2759ms
+2017-01-12 17:56:51.7504|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 481.3307ms 200 application/json; charset=utf-8
+2017-01-12 17:56:58.2283|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1 application/json 
+2017-01-12 17:56:58.3109|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) with arguments (1, False) - ModelState is Valid
+2017-01-12 17:56:58.4044|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (28ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+2017-01-12 17:56:58.4149|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-12 17:56:58.4244|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) in 182.3482ms
+2017-01-12 17:56:58.4244|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 206.5797ms 200 application/json; charset=utf-8
+2017-01-12 17:57:29.9956|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/ application/json 
+2017-01-12 17:57:30.0061|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCities (CityInfo) with arguments ((null)) - ModelState is Valid
+2017-01-12 17:57:30.0483|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+ORDER BY [c].[Name]
+2017-01-12 17:57:30.0483|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-12 17:57:30.0679|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCities (CityInfo) in 61.1204ms
+2017-01-12 17:57:30.0769|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 83.1195ms 200 application/json; charset=utf-8
+2017-01-12 17:57:39.4889|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1 application/json 
+2017-01-12 17:57:39.5000|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) with arguments (1, False) - ModelState is Valid
+2017-01-12 17:57:39.5148|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+2017-01-12 17:57:39.5148|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-12 17:57:39.5363|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) in 37.0205ms
+2017-01-12 17:57:39.5467|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 57.8678ms 200 application/json; charset=utf-8
+2017-01-12 17:57:51.3955|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/10 application/json 
+2017-01-12 17:57:51.4096|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) with arguments (10, False) - ModelState is Valid
+2017-01-12 17:57:51.4251|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (2ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+2017-01-12 17:57:51.4402|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-01-12 17:57:51.4526|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) in 43.0555ms
+2017-01-12 17:57:51.4526|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 67.0453ms 404 text/plain
+2017-01-12 17:58:35.3520|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1?includePointsOfIntersest=true application/json 
+2017-01-12 17:58:35.3681|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) with arguments (1, True) - ModelState is Valid
+2017-01-12 17:58:35.4513|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (24ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+ORDER BY [c].[Id]
+2017-01-12 17:58:35.5514|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (3ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [c].[Id]
+    FROM [cities] AS [c]
+    WHERE [c].[Id] = @__id_0
+    ORDER BY [c].[Id]
+) AS [c0] ON [p].[CityId] = [c0].[Id]
+ORDER BY [c0].[Id]
+2017-01-12 17:58:35.5865|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-12 17:58:35.6031|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) in 237.5705ms
+2017-01-12 17:58:35.6132|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 263.1483ms 200 application/json; charset=utf-8
+2017-01-12 17:59:25.1348|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1?includePointsOfIntersest=true application/json 
+2017-01-12 17:59:25.1459|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) with arguments (1, True) - ModelState is Valid
+2017-01-12 17:59:25.1833|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (25ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+ORDER BY [c].[Id]
+2017-01-12 17:59:25.1953|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [c].[Id]
+    FROM [cities] AS [c]
+    WHERE [c].[Id] = @__id_0
+    ORDER BY [c].[Id]
+) AS [c0] ON [p].[CityId] = [c0].[Id]
+ORDER BY [c0].[Id]
+2017-01-12 17:59:25.2053|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-12 17:59:25.2053|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) in 70.3873ms
+2017-01-12 17:59:25.2274|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 93.8896ms 200 application/json; charset=utf-8
+2017-01-12 17:59:51.9853|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/  
+2017-01-12 17:59:51.9853|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:20134/  0
+2017-01-12 17:59:52.0859|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 130.1071ms 200 
+2017-01-12 17:59:52.2628|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 327.0722ms 404 text/plain
+2017-01-12 17:59:53.9806|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:20134/api/cities/1?includePointsOfIntersest=true application/json 
+2017-01-12 17:59:54.1340|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) with arguments (1, True) - ModelState is Valid
+2017-01-12 17:59:54.3131|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (23ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [cities] AS [c]
+WHERE [c].[Id] = @__id_0
+ORDER BY [c].[Id]
+2017-01-12 17:59:54.4445|INFO|Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory|Executed DbCommand (4ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CityId], [p].[Description], [p].[Name]
+FROM [PointsOfIntersect] AS [p]
+INNER JOIN (
+    SELECT DISTINCT TOP(1) [c].[Id]
+    FROM [cities] AS [c]
+    WHERE [c].[Id] = @__id_0
+    ORDER BY [c].[Id]
+) AS [c0] ON [p].[CityId] = [c0].[Id]
+ORDER BY [c0].[Id]
+2017-01-12 17:59:54.5163|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2017-01-12 17:59:54.6596|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.Controllers.CitiesControllers.GetCity (CityInfo) in 618.0555ms
+2017-01-12 17:59:54.6737|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 692.2747ms 200 application/json; charset=utf-8
